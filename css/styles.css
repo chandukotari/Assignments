@@ -31,3 +31,31 @@ address{
     margin:0px;
     color:#0f0f0f;
 }
+
+#reserveModal
+{
+    position:fixed;
+    left:0;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    pointer-events: none;
+    display: none;
+}
+
+#reserveModal.active{
+    display: all;
+    pointer-events: all;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus { 
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
