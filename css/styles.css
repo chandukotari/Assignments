@@ -8,18 +8,11 @@
     border-bottom: 1px ridge;
     min-height:400px;
 }
-
-.card
-{
-    margin:0 auto;
-}
-
 .footer{
     background-color: #D1C4E9;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
 }
-
 .jumbotron{
     padding: 70px 30px 70px 30px;
     margin:0px auto;
@@ -31,7 +24,6 @@ address{
     margin:0px;
     color:#0f0f0f;
 }
-
 #reserveModal
 {
     position:fixed;
@@ -41,21 +33,21 @@ address{
     pointer-events: none;
     display: none;
 }
-
 #reserveModal.active{
     display: all;
     pointer-events: all;
 }
-
-.close {
+.close
+{
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  .close:hover,
-  .close:focus { 
+ }
+.close:hover,
+.close:focus
+{
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
