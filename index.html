@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet">
     <link href="fontawesome/fontawesome-free-6.2.0-web/css/all.css" rel="stylesheet">
+    <link href="javascript/scripts.js">
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: rgb(81,51,165);">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand mr-auto" href="index.html"><img src="assets/Images/logo.png" height="30" width="40"></a>
@@ -31,7 +32,7 @@
                             Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal">
+                    <a type="button" id="Login_btn">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -39,12 +40,49 @@
     </nav>
 
 
+    <div id="LoginModal" class="modal fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" id="LoginCloseButton">×</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="LoginCancel">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div id="reserveModal" class="modal fade" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Reserve a Table</h3>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <button type="button" class="close" id="ReserveClose">×</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -83,7 +121,7 @@
                             <div class="col-12 col-md-2 col-form-label">
                                 <label for="section">Section</label>
                             </div>
-                            <div class="col-12 col-md-8 btn-group btn-group-toggle" data-toggle="buttons">
+                            <div class="col-12 col-md-8 btn-group btn-group-toggle">
                                 <label class="btn btn-success active pt-2">
                                     <input type="radio" required="" name="section" id="option2" value="1" checked="" autocomplete="off"> Non-Smoking
                                 </label>
@@ -110,7 +148,7 @@
                         <div class="form-group row">
                             <div class="col-2"></div>
                             <div class="col-8">
-                                <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                                <button type="button" id="ReserveModalCancel" class="btn btn-secondary">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                         </div>
@@ -119,7 +157,6 @@
             </div>
         </div>
     </div>
-
 
     <header class="jumbotron" style="background-color: rgb(148,119,203);color:white;">
         <div class="container">
@@ -133,8 +170,7 @@
                 </div>
                 <div class="col-12 col-sm-3 align-items-center">
                     <p class="d-none d-sm-block" style="padding:30px;"></p>
-                    <a type="button" class="btn btn-warning btn-block"
-                    data-toggle="modal" data-target="#reserveModal" id="reserve_btn"
+                    <a type="button" class="btn btn-warning btn-block" id="reserve_btn"
                     onclick="op">Reserve Table</a>
                 </div>
             </div>
@@ -243,16 +279,7 @@
  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<script>
-    function openModal() {
-      document.getElementById("reserveModal").style.display = "block";
-    }
-  
-    function closeModal() {
-      document.getElementById("reserveModal").style.display = "none";
-    }
-  </script>
+ <script src="javascript/scripts.js"></script>>
 </body>
 
 </html>

@@ -37,6 +37,19 @@ address{
     display: all;
     pointer-events: all;
 }
+#loginModal
+{
+    position:fixed;
+    left:0;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    pointer-events: none;
+    display: none;
+}
+#loginModal.active{
+    display: all;
+    pointer-events: all;
+}
 .close
 {
     color: #aaa;
