@@ -38,14 +38,12 @@
             </div>
         </div>
     </nav>
-
-
     <div id="LoginModal" class="modal fade" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" id="LoginCloseButton">×</button>
+                    <button type="button" class="close" id="LoginCloseButton">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -75,14 +73,12 @@
             </div>
         </div>
     </div>
-
-
     <div id="reserveModal" class="modal fade" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Reserve a Table</h3>
-                    <button type="button" class="close" id="ReserveClose">×</button>
+                    <button type="button" class="close" id="ReserveClose">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -157,7 +153,6 @@
             </div>
         </div>
     </div>
-
     <header class="jumbotron" style="background-color: rgb(148,119,203);color:white;">
         <div class="container">
             <div class="row row-header">
@@ -170,63 +165,65 @@
                 </div>
                 <div class="col-12 col-sm-3 align-items-center">
                     <p class="d-none d-sm-block" style="padding:30px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" id="reserve_btn"
+                    <a type="button" class="btn btn-warning btn-block text-white" id="reserve_btn" 
                     onclick="op">Reserve Table</a>
                 </div>
             </div>
         </div>
 
     </header>
-    <div class="row row-content">
-        <div class="col">
-            <div id="mycarousel" class="carousel slide">
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item">
-                        <img class="d-block img-fluid" src="assets/Images/uthappizza.png" alt="Uthappizza">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
-                            <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
-                                pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur
-                                chillies and Buffalo Paneer.</p>
+    
+    <div class="container">
+        <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="assets/Images/uthappizza.png" alt="Uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
+                                    pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur
+                                    chillies and Buffalo Paneer.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block img-fluid" src="assets/Images/buffet.png" alt="buffet">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span> </h2>
-                            <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing
-                                appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft
-                                drinks. All for just $19.99 per person </p>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="assets/Images/buffet.png" alt="buffet">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span> </h2>
+                                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing
+                                    appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft
+                                    drinks. All for just $19.99 per person </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="assets/Images/alberto.png" alt="Alberto Somayya">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="mt-0">Alberto Somayya</h2>
-                            <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International
-                                experience having worked closely with whos-who in the culinary world, he specializes in
-                                creating mouthwatering Indo-Italian fusion experiences.</p>
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="assets/Images/alberto.png" alt="Alberto Somayya">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="mt-0">Alberto Somayya</h2>
+                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International
+                                    experience having worked closely with whos-who in the culinary world, he specializes in
+                                    creating mouthwatering Indo-Italian fusion experiences.</p>
+                            </div>
                         </div>
+                        <ol class="carousel-indicators">
+                            <li class="item1"></li>
+                            <li class="item2"></li>
+                            <li class="item3 active"></li>
+                        </ol>
                     </div>
-                    <ol class="carousel-indicators">
-                        <li class="item1"></li>
-                        <li class="item2"></li>
-                        <li class="item3 active"></li>
-                    </ol>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" id="prev_button">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" id="next_button">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carosel-button-icon" class="fa fa-pause"></span>
+                    </button>
                 </div>
-                <a class="carousel-control-prev" href="#mycarousel" role="button" id="prev_button">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#mycarousel" role="button" id="next_button">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-                <button class="btn btn-danger btn-sm" id="carouselButton">
-                    <span id="carosel-button-icon" class="fa fa-pause"></span>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="container">
+
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -279,9 +276,7 @@
             </div>
         </div>
     </div>
-    
     <p style="padding: 40px;"></p>
-
     <footer class="footer" style="background-color:rgb(208, 196, 232)">
         <div class="container">
             <div class="row">             
@@ -323,7 +318,7 @@
            </div>
         </div>
     </footer>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    
  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
