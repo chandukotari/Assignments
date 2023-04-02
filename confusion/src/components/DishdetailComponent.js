@@ -9,53 +9,60 @@ import {
   Col,
   Row,
 } from "reactstrap";
-
+import { DISHES } from "../shared/dishes";
 const Dishdetailed = (props) => {
   if (props != null) {
+    const { dish } = props;
     return (
-      <Card>
-        <Container className="container">
-          <Row>
-            <Col md={6}>
-              <CardImg src={props.dish.image} alt={props.dish.name} />
-              <CardBody>
-                <CardTitle tag="h3">{props.dish.name}</CardTitle>
-                <CardText>{props.dish.description}</CardText>
-              </CardBody>
-            </Col>
-            <Col md={6}>
-              <h2>Comments</h2>
-              {LoadComments(props.dish)}
-            </Col>
-          </Row>
-        </Container>
-      </Card>
-    );
-  } else {
-    return <div></div>;
-  }
-};
-const LoadComments = (props) => {
-  if (props != null) {
-    return props.comments.map((comment) => {
-      return (
-        <div>
-          <div key={comment.id}>
-            <p>{comment.comment}</p>
-            <p>
-              --{comment.author} ,
-              {new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "2-digit",
-              }).format(new Date(Date.parse(comment.date)))}
-            </p>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-5 m-1">{RenderDish({ dish })}</div>
+          <div className="col-12 col-md-5 m-1">
+            <h4>Comments</h4>
+            {RenderComments(dish.comments)}
           </div>
+        </div>
+      </div>
+    );
+  } else return <div />;
+};
+const RenderDish = (props) => {
+  if (props != null) {
+    const { dish } = props;
+    return (
+      <div>
+        <CardImg width="10%" src={dish.image} alt={dish.name} />
+        <CardBody>
+          <CardTitle tag="h3">{dish.name}</CardTitle>
+          <CardText>{dish.description}</CardText>
+        </CardBody>
+      </div>
+    );
+  } else return <div />;
+};
+const RenderComments = (props) => {
+  if (props != null) {
+    return props.map((comment) => {
+      return (
+        <div key={comment.id}>
+          <ul>
+            <li>
+              <p>{comment.comment}</p>
+              <p>
+                --{comment.author} ,
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "2-digit",
+                }).format(new Date(Date.parse(comment.date)))}
+              </p>
+            </li>
+          </ul>
         </div>
       );
     });
   } else {
-    return <div></div>;
+    return <div />;
   }
 };
 export default Dishdetailed;
