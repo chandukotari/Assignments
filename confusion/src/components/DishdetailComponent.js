@@ -1,48 +1,61 @@
 import React from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  Container,
+  Col,
+  Row,
+} from "reactstrap";
 
 const Dishdetailed = (props) => {
-  return (
-    <div>
-      <Card style={{ margin: "20px 0px" }}>
-        <CardImg src={props.dish.image} alt={props.dish.name} width="10%"/>
-        <CardBody>
-          <CardTitle tag="h5">{props.dish.name}</CardTitle>
-          <CardText>{props.dish.description}</CardText>
-          {PrintComments(props.dish)}
-        </CardBody>
+  if (props != null) {
+    return (
+      <Card>
+        <Container className="container">
+          <Row>
+            <Col md={6}>
+              <CardImg src={props.dish.image} alt={props.dish.name} />
+              <CardBody>
+                <CardTitle tag="h3">{props.dish.name}</CardTitle>
+                <CardText>{props.dish.description}</CardText>
+              </CardBody>
+            </Col>
+            <Col md={6}>
+              <h2>Comments</h2>
+              {LoadComments(props.dish)}
+            </Col>
+          </Row>
+        </Container>
       </Card>
-      <Card style={{ margin: "20px 0px" }}>
-        <CardBody style={{ textAlign: "left" }}>
-          <CardImg width="10%" alt={props.dish.name} src={props.dish.image} />
-          <CardTitle tag="h4" style={{ marginTop: "20px" }}>
-            {props.dish.name}
-          </CardTitle>
-          <CardText>{props.dish.description}</CardText>
-          <CardText>{props.dish.price}/-</CardText>
-          <hr />
-          <CardText>{props.dish.comment}</CardText>
-        </CardBody>
-      </Card>
-    </div>
-  );
+    );
+  } else {
+    return <div></div>;
+  }
 };
-function PrintComments(props)
-{
-  if(props.dish!=null)
-  {
-    return(
-      <div>
-          <p tag="h3">Comments</p>
-          <CardText>{props.dish.comment}</CardText>
-      </div>
-    );
+const LoadComments = (props) => {
+  if (props != null) {
+    return props.comments.map((comment) => {
+      return (
+        <div>
+          <div key={comment.id}>
+            <p>{comment.comment}</p>
+            <p>
+              --{comment.author} ,
+              {new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+              }).format(new Date(Date.parse(comment.date)))}
+            </p>
+          </div>
+        </div>
+      );
+    });
+  } else {
+    return <div></div>;
   }
-  else
-  {
-    return(
-      <div></div>
-    );
-  }
-}
+};
 export default Dishdetailed;
